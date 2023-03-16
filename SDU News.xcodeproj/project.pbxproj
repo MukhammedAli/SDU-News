@@ -21,6 +21,11 @@
 		D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */; };
 		D170863F29C2EE0B00AC7E60 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */; };
 		D170864129C2EE1900AC7E60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170864029C2EE1900AC7E60 /* ProfileViewController.swift */; };
+		D170864429C2F3A300AC7E60 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170864329C2F3A300AC7E60 /* PopUpViewController.swift */; };
+		D170864629C2F41F00AC7E60 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170864529C2F41F00AC7E60 /* SignInViewController.swift */; };
+		D170864829C2F42B00AC7E60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170864729C2F42B00AC7E60 /* SignUpViewController.swift */; };
+		D170864B29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D170864A29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf */; };
+		D170864D29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D170864C29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf */; };
 		D70A31D9AA9D8D4A0360220B /* Pods_SDU_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7197CC51420FDE728BCA07 /* Pods_SDU_News.framework */; };
 		EB04AD9DD6A95416B24CD65A /* Pods_SDU_News_SDU_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0422CFBCA49D73A7190666D /* Pods_SDU_News_SDU_NewsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +71,11 @@
 		D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewController.swift; sourceTree = "<group>"; };
 		D170864029C2EE1900AC7E60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D170864329C2F3A300AC7E60 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		D170864529C2F41F00AC7E60 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D170864729C2F42B00AC7E60 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D170864A29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		D170864C29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		D4338AE74D8DDB037DC3CBFD /* Pods-SDU NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FA1D423DCDA269A1FB2C28 /* Pods-SDU NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.release.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE13426E25DA3936806D18A1 /* Pods-SDU News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU News.debug.xcconfig"; path = "Target Support Files/Pods-SDU News/Pods-SDU News.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 		D106E7A8299FF46E00F11079 /* SDU News */ = {
 			isa = PBXGroup;
 			children = (
+				D170864929C3201400AC7E60 /* Fonts */,
 				D170863829C2EDD200AC7E60 /* Controllers */,
 				D106E7A9299FF46E00F11079 /* AppDelegate.swift */,
 				D106E7AB299FF46E00F11079 /* SceneDelegate.swift */,
@@ -179,6 +190,7 @@
 		D170863829C2EDD200AC7E60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D170864229C2F2BC00AC7E60 /* RegistrationControllers */,
 				D170863929C2EDDB00AC7E60 /* CoreControllers */,
 			);
 			path = Controllers;
@@ -193,6 +205,25 @@
 				D170864029C2EE1900AC7E60 /* ProfileViewController.swift */,
 			);
 			path = CoreControllers;
+			sourceTree = "<group>";
+		};
+		D170864229C2F2BC00AC7E60 /* RegistrationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D170864329C2F3A300AC7E60 /* PopUpViewController.swift */,
+				D170864529C2F41F00AC7E60 /* SignInViewController.swift */,
+				D170864729C2F42B00AC7E60 /* SignUpViewController.swift */,
+			);
+			path = RegistrationControllers;
+			sourceTree = "<group>";
+		};
+		D170864929C3201400AC7E60 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D170864C29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf */,
+				D170864A29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +335,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D170864D29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				D106E7B9299FF46F00F11079 /* LaunchScreen.storyboard in Resources */,
+				D170864B29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf in Resources */,
 				D106E7B6299FF46F00F11079 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D170864829C2F42B00AC7E60 /* SignUpViewController.swift in Sources */,
 				D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */,
 				D106E7AE299FF46E00F11079 /* TabbarViewController.swift in Sources */,
 				D170863F29C2EE0B00AC7E60 /* ClubsViewController.swift in Sources */,
@@ -440,6 +474,8 @@
 				D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */,
 				D106E7AA299FF46E00F11079 /* AppDelegate.swift in Sources */,
 				D170864129C2EE1900AC7E60 /* ProfileViewController.swift in Sources */,
+				D170864429C2F3A300AC7E60 /* PopUpViewController.swift in Sources */,
+				D170864629C2F41F00AC7E60 /* SignInViewController.swift in Sources */,
 				D106E7AC299FF46E00F11079 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
