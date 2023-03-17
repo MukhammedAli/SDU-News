@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>461766398248-ttsc7kjifu69qbcojdc2lkb3768m1idv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.461766398248-ttsc7kjifu69qbcojdc2lkb3768m1idv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcV_pyD0nYViJvUifJg8CzSkaXMQ5hNrQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>461766398248</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mukhammed.SDU-News</string>
+	<key>PROJECT_ID</key>
+	<string>sdunews-17aba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sdunews-17aba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:461766398248:ios:5f7784419c515f2c9a401d</string>
+</dict>
+</plist>

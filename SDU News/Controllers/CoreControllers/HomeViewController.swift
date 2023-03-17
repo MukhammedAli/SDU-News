@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -34,6 +34,11 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hidesBottomBarWhenPushed = true
+//        if Auth.auth().currentUser == nil {
+//            let vc = UINavigationController(rootViewController: PopUpViewController())
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: true)
+//        }
     }
     
     @objc private func moveToSignIn() {

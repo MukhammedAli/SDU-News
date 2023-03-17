@@ -92,6 +92,7 @@ class SignInViewController: UIViewController {
         textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(string: "Email",                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel,
                                                                                                                                              NSAttributedString.Key.font: UIFont(name: "MontserratRoman-Regular", size: 16)])
+        
         return textField
     }()
     
