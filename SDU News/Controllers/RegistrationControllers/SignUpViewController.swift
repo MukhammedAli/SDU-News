@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+import Combine
 class SignUpViewController: UIViewController {
     
-    
+    private var viewModel = RegisterViewViewModel()
+    private var subscriptions:  Set<AnyCancellable> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -27,6 +28,9 @@ class SignUpViewController: UIViewController {
         navbarConfiguration()
         configureConstraitns()
         signInPageMove()
+        connectViews()
+        signUpButton.addTarget(self, action: #selector(registeredOnTap), for: .touchUpInside)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToDismiss)))
         for family in UIFont.familyNames.sorted() {
             let names = UIFont.fontNames(forFamilyName: family)
             print("Family: \(family) Font names: \(names)")
@@ -34,20 +38,90 @@ class SignUpViewController: UIViewController {
         
        
         
+        
+       
+        
         // Do any additional setup after loading the view.
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        hidesBottomBarWhenPushed = true
-//    }
     
-    
-    private func signInPageMove() {
-        promptSignInButton.addTarget(self, action: #selector(moveToSignUp), for: .touchUpInside)
+    @objc private  func registeredOnTap() {
+        viewModel.createUser()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    @objc private func moveToSignUp() {
-        let vc = SignUpViewController()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
+    
+    @objc private func tapToDismiss() {
+        view.endEditing(true)
+    }
+    @objc func emailFieldChanged() {
+        viewModel.email = emailTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    @objc func passwordFieldChanged() {
+        viewModel.password = passwordTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    @objc func fullNameFieldChanged() {
+        viewModel.fullName = fullNameTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    @objc func confirmYourPasswordFieldChanged() {
+        viewModel.repetitionOfPassword = confirmYourPasswordTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    private func connectViews() {
+        emailTextField.addTarget(self, action: #selector(emailFieldChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordFieldChanged), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(fullNameFieldChanged), for: .editingChanged)
+        confirmYourPasswordTextField.addTarget(self, action: #selector(confirmYourPasswordFieldChanged), for: .editingChanged)
+        viewModel.$isRegistrationFormValid.sink {[weak self] validationState  in
+            self?.signUpButton.isEnabled = validationState
+        }
+        .store(in: &subscriptions)
+        
+        viewModel.$user.sink {[weak self] user in
+            guard user != nil else {return}
+            let vc = SignInViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        .store(in: &subscriptions)
+        
+        viewModel.$error.sink { [weak self] errorString in
+            guard let error = errorString else {return}
+            self?.presentAlert(with: error)
+        }
+        
+        .store(in: &subscriptions)
+        
+        
+
+    }
+    
+    private func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        let okay = UIAlertAction(title: "ok", style: .default)
+        alert.addAction(okay)
+        present(alert, animated: true)
+    }
+    
+    private func signInPageMove() {
+        promptSignInButton.addTarget(self, action: #selector(moveToSignIn), for: .touchUpInside)
+    }
+    
+    @objc private func moveToSignIn() {
+        let vc = SignInViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -80,7 +154,7 @@ class SignUpViewController: UIViewController {
     
     private let promptSignInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign up", for: .normal)
+        button.setTitle("Sign in", for: .normal)
         button.tintColor = .black
         button.titleLabel?.font = UIFont(name: "MontserratRoman-Regular", size: 16)
        return button
@@ -88,6 +162,7 @@ class SignUpViewController: UIViewController {
     
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
+        button.isEnabled = false
         button.backgroundColor = UIColor(red: 9/255, green: 24/255, blue: 96/255, alpha: 1)
         button.titleLabel?.font = UIFont(name: "MontserratRoman-Regular", size: 15)
         button.layer.cornerRadius = 20

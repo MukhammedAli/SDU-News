@@ -7,11 +7,12 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class SignInViewController: UIViewController {
 
-    
-    
+    private var viewModel = RegisterViewViewModel()
+    private var subscriptions : Set<AnyCancellable> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -24,6 +25,8 @@ class SignInViewController: UIViewController {
         view.addSubview(loginButton)
         view.addSubview(promptLabel)
         view.addSubview(promptSignUpButton)
+        connectViews()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         navbarConfiguration()
         configureConstraitns()
         signUpPageMove()
@@ -36,10 +39,76 @@ class SignInViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+
+
+private func presentAlert(with error: String) {
+    let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+    let okay = UIAlertAction(title: "ok", style: .default)
+    alert.addAction(okay)
+    present(alert, animated: true)
+}
+    
+    
+    @objc private func loginButtonTapped() {
+        viewModel.loginUser()
+      
+    }
+   
+    
+    
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        hidesBottomBarWhenPushed = true
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hidesBottomBarWhenPushed = true
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
+    
+    
+    
+    @objc func emailFieldChanged() {
+        viewModel.email = emailTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    @objc func passwordFieldChanged() {
+        viewModel.password = passwordTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    
+    private func connectViews() {
+        emailTextField.addTarget(self, action: #selector(emailFieldChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordFieldChanged), for: .editingChanged)
+        
+        
+        viewModel.$user.sink {[weak self] user in
+            guard user != nil else {return}
+            guard let vc = self?.navigationController?.viewControllers.first as? PopUpViewController else {return}
+            vc.dismiss(animated: true)
+        }
+        .store(in: &subscriptions)
+        
+        viewModel.$error.sink { [weak self] errorString in
+            guard let error = errorString else {return}
+            self?.presentAlert(with: error)
+        }
+        
+        .store(in: &subscriptions)
+        
+        
+
+    }
+    
     
     
     private func signUpPageMove() {
