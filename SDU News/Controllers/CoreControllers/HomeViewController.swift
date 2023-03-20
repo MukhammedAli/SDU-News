@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -24,7 +24,13 @@ class HomeViewController: UIViewController {
         view.addSubview(button)
         button.addTarget(self, action: #selector(moveToSignIn), for: .touchUpInside)
         applyConstraints()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image:  UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(signOutTapped))
        
+    }
+    
+    @objc private func signOutTapped() {
+        try? Auth.auth().signOut()
+        authenticationHandler()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,7 +40,16 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hidesBottomBarWhenPushed = true
+        authenticationHandler()
     }
+    private func authenticationHandler() {
+        if Auth.auth().currentUser == nil {
+            let vc = UINavigationController(rootViewController: PopUpViewController())
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
+    }
+    
     
     @objc private func moveToSignIn() {
             let vc = SignInViewController()
