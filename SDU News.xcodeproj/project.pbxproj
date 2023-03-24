@@ -38,6 +38,7 @@
 		D17086BA29C4F32E00AC7E60 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D17086B929C4F32E00AC7E60 /* FirebaseFirestoreSwift */; };
 		D17086BC29C4F32E00AC7E60 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D17086BB29C4F32E00AC7E60 /* FirebaseStorage */; };
 		D17086BE29C4F32E00AC7E60 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D17086BD29C4F32E00AC7E60 /* FirebaseStorageCombine-Community */; };
+		D17086C429CB0F4A00AC7E60 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */; };
 		D70A31D9AA9D8D4A0360220B /* Pods_SDU_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7197CC51420FDE728BCA07 /* Pods_SDU_News.framework */; };
 		EB04AD9DD6A95416B24CD65A /* Pods_SDU_News_SDU_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0422CFBCA49D73A7190666D /* Pods_SDU_News_SDU_NewsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		D170866A29C4CE0300AC7E60 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		D170866D29C4D67800AC7E60 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D17086AA29C4F1AA00AC7E60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		D4338AE74D8DDB037DC3CBFD /* Pods-SDU NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FA1D423DCDA269A1FB2C28 /* Pods-SDU NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.release.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE13426E25DA3936806D18A1 /* Pods-SDU News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU News.debug.xcconfig"; path = "Target Support Files/Pods-SDU News/Pods-SDU News.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		D106E7A8299FF46E00F11079 /* SDU News */ = {
 			isa = PBXGroup;
 			children = (
+				D17086C229CB0F2E00AC7E60 /* Views */,
 				D170866C29C4D66500AC7E60 /* Networking */,
 				D170866929C4CDE500AC7E60 /* ViewModels */,
 				D170864929C3201400AC7E60 /* Fonts */,
@@ -267,6 +270,14 @@
 				D170866D29C4D67800AC7E60 /* AuthManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D17086C229CB0F2E00AC7E60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D170864829C2F42B00AC7E60 /* SignUpViewController.swift in Sources */,
+				D17086C429CB0F4A00AC7E60 /* ProfileTableViewCell.swift in Sources */,
 				D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */,
 				D170866B29C4CE0300AC7E60 /* RegisterViewViewModel.swift in Sources */,
 				D106E7AE299FF46E00F11079 /* TabbarViewController.swift in Sources */,
