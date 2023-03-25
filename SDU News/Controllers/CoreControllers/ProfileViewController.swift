@@ -51,6 +51,15 @@ class ProfileViewController: UIViewController {
         return imageView
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hidesBottomBarWhenPushed = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.hidesBottomBarWhenPushed = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +136,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func profileTableViewCellDidTapFavorite() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
     
     func profileTableViewCellDidTapMyNews() {
@@ -135,11 +144,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func profileTableViewCellDidTapHelp() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(HelpViewController(), animated: true)
     }
     
     func profileTableViewCellDidTapSettings() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(SettingsViewController(), animated: true)
     }
     
     
