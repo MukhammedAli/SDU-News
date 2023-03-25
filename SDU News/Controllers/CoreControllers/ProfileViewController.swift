@@ -136,7 +136,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func profileTableViewCellDidTapFavorite() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
     
     func profileTableViewCellDidTapMyNews() {

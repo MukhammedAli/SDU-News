@@ -41,6 +41,8 @@
 		D17086C429CB0F4A00AC7E60 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */; };
 		D17086C629CDAF4900AC7E60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17086C529CDAF4900AC7E60 /* SettingsViewController.swift */; };
 		D17086C929CDFD5300AC7E60 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17086C829CDFD5300AC7E60 /* HelpViewController.swift */; };
+		D19F724C29CE1CA0003FE71D /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19F724B29CE1CA0003FE71D /* FavoriteViewController.swift */; };
+		D19F724E29CE2007003FE71D /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */; };
 		D70A31D9AA9D8D4A0360220B /* Pods_SDU_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7197CC51420FDE728BCA07 /* Pods_SDU_News.framework */; };
 		EB04AD9DD6A95416B24CD65A /* Pods_SDU_News_SDU_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0422CFBCA49D73A7190666D /* Pods_SDU_News_SDU_NewsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,8 @@
 		D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		D17086C529CDAF4900AC7E60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D17086C829CDFD5300AC7E60 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		D19F724B29CE1CA0003FE71D /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		D4338AE74D8DDB037DC3CBFD /* Pods-SDU NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FA1D423DCDA269A1FB2C28 /* Pods-SDU NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.release.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE13426E25DA3936806D18A1 /* Pods-SDU News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU News.debug.xcconfig"; path = "Target Support Files/Pods-SDU News/Pods-SDU News.debug.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */,
+				D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			children = (
 				D17086C529CDAF4900AC7E60 /* SettingsViewController.swift */,
 				D17086C829CDFD5300AC7E60 /* HelpViewController.swift */,
+				D19F724B29CE1CA0003FE71D /* FavoriteViewController.swift */,
 			);
 			path = AdditionalControllers;
 			sourceTree = "<group>";
@@ -561,6 +567,8 @@
 				D170866E29C4D67800AC7E60 /* AuthManager.swift in Sources */,
 				D106E7AA299FF46E00F11079 /* AppDelegate.swift in Sources */,
 				D17086C929CDFD5300AC7E60 /* HelpViewController.swift in Sources */,
+				D19F724C29CE1CA0003FE71D /* FavoriteViewController.swift in Sources */,
+				D19F724E29CE2007003FE71D /* FavoriteTableViewCell.swift in Sources */,
 				D170864129C2EE1900AC7E60 /* ProfileViewController.swift in Sources */,
 				D170864429C2F3A300AC7E60 /* PopUpViewController.swift in Sources */,
 				D170864629C2F41F00AC7E60 /* SignInViewController.swift in Sources */,
