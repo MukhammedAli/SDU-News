@@ -140,7 +140,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func profileTableViewCellDidTapMyNews() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(LostAndFoundViewController(), animated: true)
     }
     
     func profileTableViewCellDidTapHelp() {

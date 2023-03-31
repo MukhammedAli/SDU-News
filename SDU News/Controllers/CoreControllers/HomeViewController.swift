@@ -287,11 +287,11 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        hidesBottomBarWhenPushed = false
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hidesBottomBarWhenPushed = true
+
         authenticationHandler()
     }
     

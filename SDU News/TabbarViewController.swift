@@ -15,7 +15,7 @@ class TabbarViewController: UITabBarController {
       
         let vc1 = UINavigationController(rootViewController: HomeViewController())
         let vc2 = UINavigationController(rootViewController: NewsViewController())
-        let vc3 = UINavigationController(rootViewController: ClubsViewController())
+        let vc3 = UINavigationController(rootViewController: LostAndFoundViewController())
         let vc4 = UINavigationController(rootViewController: ProfileViewController())
         
         vc1.tabBarItem.image = UIImage(systemName: "house")

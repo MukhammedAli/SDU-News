@@ -1,15 +1,15 @@
 //
-//  TrendingCollectionViewCell.swift
+//  LostAndFoundCollectionViewCell.swift
 //  SDU News
 //
-//  Created by  Mukhammed Ali Khamzayev on 25.03.2023.
+//  Created by  Mukhammed Ali Khamzayev on 01.04.2023.
 //
 
 import UIKit
-import SnapKit
 
-
-class TrendingCollectionViewCell: UICollectionViewCell {
+class LostAndFoundCollectionViewCell: UICollectionViewCell {
+    
+    
     
     
     private let timeLabel: UILabel = {
@@ -51,6 +51,14 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    
+    func setImage(imageNames: String) {
+       imageView.image = UIImage(named: imageNames)
+   }
+   
+    func setLabelName(labelText: String) {
+       newsTitle.text = labelText
+   }
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -95,11 +103,6 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    
 }
-
-
-
-
-
-
-
