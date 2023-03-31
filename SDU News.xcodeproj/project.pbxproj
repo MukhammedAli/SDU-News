@@ -17,6 +17,8 @@
 		D106E7C4299FF46F00F11079 /* SDU_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7C3299FF46F00F11079 /* SDU_NewsTests.swift */; };
 		D106E7CE299FF46F00F11079 /* SDU_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7CD299FF46F00F11079 /* SDU_NewsUITests.swift */; };
 		D106E7D0299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7CF299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift */; };
+		D128EB5829D574D000649EF6 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */; };
+		D128EB5A29D574DF00649EF6 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */; };
 		D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */; };
 		D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */; };
 		D170863F29C2EE0B00AC7E60 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */; };
@@ -86,6 +88,8 @@
 		D106E7C9299FF46F00F11079 /* SDU NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDU NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D106E7CD299FF46F00F11079 /* SDU_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_NewsUITests.swift; sourceTree = "<group>"; };
 		D106E7CF299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_NewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../../../Downloads/Poppins/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 		D170864929C3201400AC7E60 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */,
+				D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */,
 				D170864C29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf */,
 				D170864A29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf */,
 			);
@@ -430,6 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D170864D29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				D128EB5829D574D000649EF6 /* Poppins-Bold.ttf in Resources */,
+				D128EB5A29D574DF00649EF6 /* Poppins-Regular.ttf in Resources */,
 				D106E7B9299FF46F00F11079 /* LaunchScreen.storyboard in Resources */,
 				D17086AB29C4F1AA00AC7E60 /* GoogleService-Info.plist in Resources */,
 				D170864B29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf in Resources */,
