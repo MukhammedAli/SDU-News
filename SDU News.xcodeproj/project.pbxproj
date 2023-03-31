@@ -17,6 +17,8 @@
 		D106E7C4299FF46F00F11079 /* SDU_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7C3299FF46F00F11079 /* SDU_NewsTests.swift */; };
 		D106E7CE299FF46F00F11079 /* SDU_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7CD299FF46F00F11079 /* SDU_NewsUITests.swift */; };
 		D106E7D0299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106E7CF299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift */; };
+		D128EB5829D574D000649EF6 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */; };
+		D128EB5A29D574DF00649EF6 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */; };
 		D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */; };
 		D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */; };
 		D170863F29C2EE0B00AC7E60 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */; };
@@ -43,6 +45,8 @@
 		D17086C929CDFD5300AC7E60 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17086C829CDFD5300AC7E60 /* HelpViewController.swift */; };
 		D19F724C29CE1CA0003FE71D /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19F724B29CE1CA0003FE71D /* FavoriteViewController.swift */; };
 		D19F724E29CE2007003FE71D /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */; };
+		D19F725029CEE015003FE71D /* TrendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19F724F29CEE015003FE71D /* TrendingCollectionViewCell.swift */; };
+		D1BDA6EA29D1F61000CEB7CF /* ClubsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDA6E929D1F61000CEB7CF /* ClubsCollectionViewCell.swift */; };
 		D70A31D9AA9D8D4A0360220B /* Pods_SDU_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7197CC51420FDE728BCA07 /* Pods_SDU_News.framework */; };
 		EB04AD9DD6A95416B24CD65A /* Pods_SDU_News_SDU_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0422CFBCA49D73A7190666D /* Pods_SDU_News_SDU_NewsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +88,8 @@
 		D106E7C9299FF46F00F11079 /* SDU NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDU NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D106E7CD299FF46F00F11079 /* SDU_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_NewsUITests.swift; sourceTree = "<group>"; };
 		D106E7CF299FF46F00F11079 /* SDU_NewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_NewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../../../Downloads/Poppins/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D170863E29C2EE0B00AC7E60 /* ClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 		D17086C829CDFD5300AC7E60 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D19F724B29CE1CA0003FE71D /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		D19F724F29CEE015003FE71D /* TrendingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1BDA6E929D1F61000CEB7CF /* ClubsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4338AE74D8DDB037DC3CBFD /* Pods-SDU NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FA1D423DCDA269A1FB2C28 /* Pods-SDU NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU NewsTests.release.xcconfig"; path = "Target Support Files/Pods-SDU NewsTests/Pods-SDU NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE13426E25DA3936806D18A1 /* Pods-SDU News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU News.debug.xcconfig"; path = "Target Support Files/Pods-SDU News/Pods-SDU News.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +267,8 @@
 		D170864929C3201400AC7E60 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */,
+				D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */,
 				D170864C29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf */,
 				D170864A29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf */,
 			);
@@ -286,6 +296,8 @@
 			children = (
 				D17086C329CB0F4A00AC7E60 /* ProfileTableViewCell.swift */,
 				D19F724D29CE2007003FE71D /* FavoriteTableViewCell.swift */,
+				D19F724F29CEE015003FE71D /* TrendingCollectionViewCell.swift */,
+				D1BDA6E929D1F61000CEB7CF /* ClubsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D170864D29C3235900AC7E60 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				D128EB5829D574D000649EF6 /* Poppins-Bold.ttf in Resources */,
+				D128EB5A29D574DF00649EF6 /* Poppins-Regular.ttf in Resources */,
 				D106E7B9299FF46F00F11079 /* LaunchScreen.storyboard in Resources */,
 				D17086AB29C4F1AA00AC7E60 /* GoogleService-Info.plist in Resources */,
 				D170864B29C3207200AC7E60 /* Nunito-VariableFont_wght.ttf in Resources */,
@@ -562,6 +576,8 @@
 				D106E7AE299FF46E00F11079 /* TabbarViewController.swift in Sources */,
 				D170863F29C2EE0B00AC7E60 /* ClubsViewController.swift in Sources */,
 				D106E7B4299FF46F00F11079 /* SDU_News.xcdatamodeld in Sources */,
+				D19F725029CEE015003FE71D /* TrendingCollectionViewCell.swift in Sources */,
+				D1BDA6EA29D1F61000CEB7CF /* ClubsCollectionViewCell.swift in Sources */,
 				D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */,
 				D17086C629CDAF4900AC7E60 /* SettingsViewController.swift in Sources */,
 				D170866E29C4D67800AC7E60 /* AuthManager.swift in Sources */,
