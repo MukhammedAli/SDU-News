@@ -204,6 +204,7 @@ class HomeViewController: UIViewController {
         view.addSubview(sectionStack)
         view.addSubview(indicator)
         view.addSubview(newsTableView)
+        actionClubs()
         collectionViewSetup.register(TrendingCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionViewSetup.delegate = self
         collectionViewSetup.dataSource = self
@@ -220,6 +221,14 @@ class HomeViewController: UIViewController {
         navigationItem.searchController = searchController
       configureStackButtons()
        
+    }
+    
+     private func actionClubs() {
+        seeAllClubs.addTarget(self, action: #selector(moveToClubList), for: .touchUpInside)
+    }
+    
+    @objc private func moveToClubList() {
+        navigationController?.pushViewController(ClubsListViewController(), animated: true)
     }
     
     

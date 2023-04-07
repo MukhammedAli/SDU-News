@@ -20,6 +20,8 @@
 		D128EB5829D574D000649EF6 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */; };
 		D128EB5A29D574DF00649EF6 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */; };
 		D128EB5E29D7682400649EF6 /* LostAndFoundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128EB5D29D7682300649EF6 /* LostAndFoundCollectionViewCell.swift */; };
+		D14068E629DEB37200DC218A /* ClubsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068E529DEB37200DC218A /* ClubsListViewController.swift */; };
+		D14068E829DF393900DC218A /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */; };
 		D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */; };
 		D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */; };
 		D170863F29C2EE0B00AC7E60 /* LostAndFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */; };
@@ -92,6 +94,8 @@
 		D128EB5729D574D000649EF6 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../../../Downloads/Poppins/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		D128EB5929D574DF00649EF6 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		D128EB5D29D7682300649EF6 /* LostAndFoundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAndFoundCollectionViewCell.swift; sourceTree = "<group>"; };
+		D14068E529DEB37200DC218A /* ClubsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsListViewController.swift; sourceTree = "<group>"; };
+		D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAndFoundViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */,
 				D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */,
 				D170864029C2EE1900AC7E60 /* ProfileViewController.swift */,
+				D14068E529DEB37200DC218A /* ClubsListViewController.swift */,
 			);
 			path = CoreControllers;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				D19F724F29CEE015003FE71D /* TrendingCollectionViewCell.swift */,
 				D1BDA6E929D1F61000CEB7CF /* ClubsCollectionViewCell.swift */,
 				D128EB5D29D7682300649EF6 /* LostAndFoundCollectionViewCell.swift */,
+				D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14068E629DEB37200DC218A /* ClubsListViewController.swift in Sources */,
 				D170864829C2F42B00AC7E60 /* SignUpViewController.swift in Sources */,
 				D17086C429CB0F4A00AC7E60 /* ProfileTableViewCell.swift in Sources */,
 				D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */,
@@ -589,6 +596,7 @@
 				D19F724C29CE1CA0003FE71D /* FavoriteViewController.swift in Sources */,
 				D19F724E29CE2007003FE71D /* FavoriteTableViewCell.swift in Sources */,
 				D128EB5E29D7682400649EF6 /* LostAndFoundCollectionViewCell.swift in Sources */,
+				D14068E829DF393900DC218A /* CardsCollectionViewCell.swift in Sources */,
 				D170864129C2EE1900AC7E60 /* ProfileViewController.swift in Sources */,
 				D170864429C2F3A300AC7E60 /* PopUpViewController.swift in Sources */,
 				D170864629C2F41F00AC7E60 /* SignInViewController.swift in Sources */,

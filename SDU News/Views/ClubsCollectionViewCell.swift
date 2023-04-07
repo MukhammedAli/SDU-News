@@ -37,9 +37,11 @@ class ClubsCollectionViewCell: UICollectionViewCell {
         
         clubName.snp.makeConstraints {
             $0.top.equalTo(clubsLogo.snp.bottom).inset(-10)
-            $0.left.equalToSuperview().inset(13)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             
         }
+      
     }
     
     func setImage(imageNames: String) {
@@ -55,6 +57,7 @@ class ClubsCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(clubsLogo)
         contentView.addSubview(clubName)
         configureConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
