@@ -64,6 +64,12 @@ extension ClubsListViewController: UICollectionViewDelegate, UICollectionViewDat
         return 9
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ClubDetailsViewController()
+        vc.setImage(imageNames: clubImages[indexPath.row])
+        vc.setClubName(labelText: clubNames[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as? CardsCollectionViewCell else { return UICollectionViewCell() }
         cell.setImage(imageNames: clubImages[indexPath.row])

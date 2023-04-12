@@ -49,7 +49,10 @@ class CardsCollectionViewCell: UICollectionViewCell {
         configureConstraints()
         contentView.backgroundColor = UIColor(red: 240/255, green: 238/255, blue: 238/255, alpha: 1)
         contentView.layer.cornerRadius = 10
+        
     }
+    
+    
     
     
     required init?(coder: NSCoder) {
