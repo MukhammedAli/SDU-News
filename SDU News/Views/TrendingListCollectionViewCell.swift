@@ -1,16 +1,13 @@
 //
-//  TrendingCollectionViewCell.swift
+//  TrendingListCollectionViewCell.swift
 //  SDU News
 //
-//  Created by  Mukhammed Ali Khamzayev on 25.03.2023.
+//  Created by  Mukhammed Ali Khamzayev on 13.04.2023.
 //
 
 import UIKit
-import SnapKit
 
-
-class TrendingCollectionViewCell: UICollectionViewCell {
-    
+class TrendingListCollectionViewCell: UICollectionViewCell {
     
     private let timeLabel: UILabel = {
        let label = UILabel()
@@ -48,11 +45,17 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "trendingnews")
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8
         return imageView
     }()
     
+    
+    func setImage(imageNames: String) {
+       imageView.image = UIImage(named: imageNames)
+   }
+   
+    func setLabelName(labelText: String) {
+       newsTitle.text = labelText
+   }
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,20 +70,6 @@ class TrendingCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureCell(model: Articles) {
-        sourceLabel.text = model.title
-        newsTitle.text = model.description
-        setImage(imageUrl: model.image_path)
-    }
-    
-    func setImage(imageUrl: String?) {
-        if let imageUrl = imageUrl, let url = URL(string: "http://185.125.88.33/images/\(imageUrl)") {
-            imageView.load(url: url)
-        } else {
-            imageView.image = UIImage(named: "trendingnews")
-        }
-   }
     
     private func configureConstraints() {
         imageView.snp.makeConstraints {
@@ -111,11 +100,6 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    
 }
-
-
-
-
-
-
-

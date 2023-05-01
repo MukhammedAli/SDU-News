@@ -53,12 +53,10 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hidesBottomBarWhenPushed = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.hidesBottomBarWhenPushed = true
     }
     
     override func viewDidLoad() {
@@ -140,7 +138,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func profileTableViewCellDidTapMyNews() {
-        navigationController?.pushViewController(ClubsViewController(), animated: true)
+        navigationController?.pushViewController(LostAndFoundViewController(), animated: true)
     }
     
     func profileTableViewCellDidTapHelp() {
