@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import Alamofire
 
 class HomeViewController: UIViewController {
     
     
-    
+    private var newsArray: [Articles] = []
+    private var clubsArray: [Categories] = []
 
     
     private enum SectionTabs: String {
@@ -42,6 +44,12 @@ class HomeViewController: UIViewController {
     private var trailingAnchors: [NSLayoutConstraint] = []
     
     
+    
+    private let trendingView: UIView = {
+       let view = UIView()
+        
+        return view
+    }()
     
     private let indicator: UIView  = {
         let view = UIView()
@@ -98,6 +106,7 @@ class HomeViewController: UIViewController {
     private let newsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: "cellnews")
+        tableView.isScrollEnabled = false
         return tableView
     }()
     
@@ -160,50 +169,50 @@ class HomeViewController: UIViewController {
         return controller
     }()
     
-  
+    private var scrollView = UIScrollView()
+    private var scrollContentView = UIView()
     
-    private let scrollView: UIScrollView = {
-       let view = UIScrollView()
-        view.frame = view.bounds
-        view.contentSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
-        view.translatesAutoresizingMaskIntoConstraints = false
+    private var stackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 16
+        view.axis = .vertical
         return view
     }()
     
-    private let trendingView: UIView = {
-       let view = UIView()
-        return view
-    }()
+    private let trendingMainView = UIView()
+    private let clubsMainView = UIView()
+    private let latestMainView = UIView()
     
-    private let clubsView: UIView = {
-       let view = UIView()
-        return view
-    }()
-    
-    private let latestView: UIView = {
-       let view = UIView()
-        return view
-    }()
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        view.addSubview(trendingView)
-        view.addSubview(clubsView)
-        view.addSubview(latestView)
         view.addSubview(scrollView)
-        view.addSubview(trendingLabel)
-        view.addSubview(trendingLabel)
-        view.addSubview(seeAllButton)
-        view.addSubview(collectionViewSetup)
-        view.addSubview(seeAllClubs)
-        view.addSubview(clubsLabel)
-        view.addSubview(clubsCollectionViewSetup)
-        view.addSubview(latestLabel)
-        view.addSubview(seeAllLatest)
-        view.addSubview(sectionStack)
-        view.addSubview(indicator)
-        view.addSubview(newsTableView)
+        scrollView.addSubview(scrollContentView)
+        scrollContentView.addSubview(stackView)
+        scrollView.alwaysBounceVertical = true
+        
+        trendingMainView.addSubview(trendingLabel)
+        trendingMainView.addSubview(seeAllButton)
+        trendingMainView.addSubview(collectionViewSetup)
+        clubsMainView.addSubview(clubsLabel)
+        clubsMainView.addSubview(clubsCollectionViewSetup)
+        clubsMainView.addSubview(seeAllClubs)
+        latestMainView.addSubview(latestLabel)
+        latestMainView.addSubview(seeAllLatest)
+        latestMainView.addSubview(sectionStack)
+        latestMainView.addSubview(indicator)
+        latestMainView.addSubview(newsTableView)
+        
+        stackView.addArrangedSubview(trendingMainView)
+        stackView.addArrangedSubview(clubsMainView)
+        stackView.addArrangedSubview(latestMainView)
+        
+        view.backgroundColor = .systemBackground
+        scrollView.isScrollEnabled = true
+        actionTrending()
         actionClubs()
         collectionViewSetup.register(TrendingCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionViewSetup.delegate = self
@@ -220,11 +229,20 @@ class HomeViewController: UIViewController {
         navbarConfiguration()
         navigationItem.searchController = searchController
       configureStackButtons()
-       
+        getCategories()
+        getArticles()
+    }
+    
+    private func actionTrending() {
+        seeAllButton.addTarget(self, action: #selector(moveToTrending), for: .touchUpInside)
     }
     
      private func actionClubs() {
         seeAllClubs.addTarget(self, action: #selector(moveToClubList), for: .touchUpInside)
+    }
+    
+    @objc private func moveToTrending() {
+        navigationController?.pushViewController(TrendingListViewController(), animated: true)
     }
     
     @objc private func moveToClubList() {
@@ -343,72 +361,110 @@ class HomeViewController: UIViewController {
             trailingAnchors.append(trailingAnchor)
         }
         
+        scrollView.snp.makeConstraints { (m) in
+            m.edges.equalToSuperview()
+        }
         
+        scrollContentView.snp.makeConstraints { (m) in
+            m.top.equalToSuperview()
+            m.leading.trailing.bottom.equalToSuperview()
+            m.width.equalTo(scrollView.snp.width)
+        }
+        
+        stackView.snp.makeConstraints { (m) in
+            m.top.equalToSuperview().offset(16)
+            m.left.equalToSuperview().offset(20)
+            m.right.equalToSuperview().offset(-20)
+            m.bottom.equalToSuperview().offset(-16)
+        }
+        
+        trendingMainView.snp.makeConstraints {
+            $0.height.equalTo(300)
+//            $0.top.equalTo(view.safeAreaLayoutGuide)
+//            $0.left.equalToSuperview().inset(22)
+//            $0.right.equalToSuperview().inset(20)
+//            $0.bottom.equalTo(collectionViewSetup.snp.bottom).inset(-15)
+        }
         
         trendingLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.left.equalToSuperview().inset(22)
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview()
         }
         
         seeAllButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.right.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
+            $0.right.equalToSuperview()
         }
         
         collectionViewSetup.snp.makeConstraints {
             $0.top.equalTo(trendingLabel.snp.bottom).inset(-10)
-            $0.left.equalToSuperview().inset(20)
-            $0.right.equalToSuperview().inset(20)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.width.equalTo(350)
             $0.height.equalTo(267)
         }
         
+        clubsMainView.snp.makeConstraints {
+//            $0.top.equalTo(trendingMainView.snp.bottom).inset(-21)
+//            $0.left.equalToSuperview().inset(20)
+//            $0.right.equalToSuperview().inset(20)
+//            $0.bottom.equalTo(clubsCollectionViewSetup.snp.bottom).inset(-5)
+            $0.height.equalTo(200)
+        }
+        
         clubsLabel.snp.makeConstraints {
-            $0.top.equalTo(collectionViewSetup.snp.bottom).inset(-21)
-            $0.left.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview()
         }
         
         seeAllClubs.snp.makeConstraints {
-            $0.top.equalTo(collectionViewSetup.snp.bottom).inset(-21)
-            $0.right.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
+            $0.right.equalToSuperview()
         }
         
         clubsCollectionViewSetup.snp.makeConstraints {
             $0.top.equalTo(clubsLabel.snp.bottom).inset(-10)
-            $0.left.equalToSuperview().inset(20)
-            $0.right.equalToSuperview().inset(20)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.width.equalTo(view.frame.width)
             $0.height.equalTo(164)
         }
         
+        
+        latestMainView.snp.makeConstraints {
+//            $0.top.equalTo(clubsMainView.snp.bottom).inset(-5)
+//            $0.left.equalToSuperview().inset(20)
+//            $0.right.equalToSuperview().inset(20)
+            $0.height.equalTo(114 * 5 + 70)
+        }
+        
         latestLabel.snp.makeConstraints {
-            $0.top.equalTo(clubsCollectionViewSetup.snp.bottom).inset(-5)
-            $0.left.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview()
         }
         
         seeAllLatest.snp.makeConstraints {
-            $0.top.equalTo(clubsCollectionViewSetup.snp.bottom).inset(-5)
-            $0.right.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
+            $0.right.equalToSuperview()
         }
         
         sectionStack.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(20)
-            $0.top.equalTo(seeAllLatest.snp.bottom).inset(-11)
-            $0.right.equalToSuperview().inset(96)
+            $0.left.equalToSuperview()
+            $0.top.equalTo(seeAllLatest.snp.bottom).inset(-5)
+            $0.right.equalToSuperview()
             
         }
         
         newsTableView.snp.makeConstraints {
             $0.width.equalTo(342)
-            $0.top.equalTo(sectionStack.snp.bottom).inset(-30)
-            $0.left.equalToSuperview().inset(25)
-            $0.right.equalToSuperview().inset(23)
-            $0.height.equalTo(500)
+            $0.top.equalTo(sectionStack.snp.bottom).inset(-10)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.height.equalTo(114 * 5)
+            $0.bottom.equalToSuperview()
         }
         
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+      
         
         
         let indicatorConstraints = [
@@ -427,10 +483,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionViewSetup {
-            return 3
+            return newsArray.count
         }
         else {
-            return 4
+            return clubsArray.count
         }
         
     }
@@ -439,11 +495,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == self.collectionViewSetup {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TrendingCollectionViewCell
+            cell.configureCell(model: newsArray[indexPath.row])
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clubCell", for: indexPath) as! ClubsCollectionViewCell
-            cell.setImage(imageNames: clubImages[indexPath.row])
-            cell.setClubName(labelText: clubNames[indexPath.row])
+            cell.setImage(imageUrl: clubsArray[indexPath.row].image_path)
+            cell.setClubName(labelText: clubsArray[indexPath.row].name)
             return cell
         }
        
@@ -454,7 +511,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -470,18 +527,65 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+// MARK: - Networking
+extension HomeViewController {
+    func getCategories() {
+        AF.request("http://185.125.88.33/categories/")
+            .validate()
+            .responseDecodable(of: [Categories].self) { (response) in
+                switch response.result {
+                case .success(let model):
+                    print(model)
+                    let categories = model.filter { category in
+                        category.parent_id == 2
+                    }
+                    self.clubsArray = categories
+                    DispatchQueue.main.async {
+                        self.clubsCollectionViewSetup.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
+    func getArticles() {
+        AF.request("http://185.125.88.33/articles/")
+            .validate()
+            .responseDecodable(of: [Articles].self) { (response) in
+                switch response.result {
+                case .success(let model):
+                    print(model)
+                    self.newsArray = model
+                    DispatchQueue.main.async {
+                        self.collectionViewSetup.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+}
 
+struct Categories: Decodable {
+    var id: Int?
+    var parent_id: Int?
+    var name: String?
+    var description: String?
+    var image_path: String?
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+struct Articles: Decodable {
+    var id: Int?
+    var likes: Int?
+    var views: Int?
+    var is_events: Bool?
+    var comments_count: Int?
+    var created_at: String?
+    var category_name: String?
+    var user_first_name: String?
+    var user_last_name: String?
+    var title: String?
+    var description: String?
+    var image_path: String?
+}

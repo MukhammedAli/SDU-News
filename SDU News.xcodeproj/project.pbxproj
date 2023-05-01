@@ -24,6 +24,9 @@
 		D14068E829DF393900DC218A /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */; };
 		D14068EB29E0316500DC218A /* ClubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068EA29E0316500DC218A /* ClubDetailsViewController.swift */; };
 		D14068ED29E6B94100DC218A /* ClubNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068EC29E6B94100DC218A /* ClubNewsTableViewCell.swift */; };
+		D14068EF29E72D1800DC218A /* TrendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068EE29E72D1800DC218A /* TrendingListViewController.swift */; };
+		D14068F129E72F5B00DC218A /* TrendingListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14068F029E72F5B00DC218A /* TrendingListCollectionViewCell.swift */; };
+		D14A3B7129FE9FBA00A33E47 /* MainDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A3B7029FE9FBA00A33E47 /* MainDetailsView.swift */; };
 		D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */; };
 		D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */; };
 		D170863F29C2EE0B00AC7E60 /* LostAndFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */; };
@@ -100,6 +103,9 @@
 		D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D14068EA29E0316500DC218A /* ClubDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailsViewController.swift; sourceTree = "<group>"; };
 		D14068EC29E6B94100DC218A /* ClubNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubNewsTableViewCell.swift; sourceTree = "<group>"; };
+		D14068EE29E72D1800DC218A /* TrendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListViewController.swift; sourceTree = "<group>"; };
+		D14068F029E72F5B00DC218A /* TrendingListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListCollectionViewCell.swift; sourceTree = "<group>"; };
+		D14A3B7029FE9FBA00A33E47 /* MainDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsView.swift; sourceTree = "<group>"; };
 		D170863A29C2EDEF00AC7E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D170863C29C2EDFE00AC7E60 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAndFoundViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 			children = (
 				D14068EA29E0316500DC218A /* ClubDetailsViewController.swift */,
 				D14068EC29E6B94100DC218A /* ClubNewsTableViewCell.swift */,
+				D14A3B7029FE9FBA00A33E47 /* MainDetailsView.swift */,
 			);
 			path = DetailsControllers;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 				D170863E29C2EE0B00AC7E60 /* LostAndFoundViewController.swift */,
 				D170864029C2EE1900AC7E60 /* ProfileViewController.swift */,
 				D14068E529DEB37200DC218A /* ClubsListViewController.swift */,
+				D14068EE29E72D1800DC218A /* TrendingListViewController.swift */,
 			);
 			path = CoreControllers;
 			sourceTree = "<group>";
@@ -321,6 +329,7 @@
 				D1BDA6E929D1F61000CEB7CF /* ClubsCollectionViewCell.swift */,
 				D128EB5D29D7682300649EF6 /* LostAndFoundCollectionViewCell.swift */,
 				D14068E729DF393900DC218A /* CardsCollectionViewCell.swift */,
+				D14068F029E72F5B00DC218A /* TrendingListCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,12 +607,14 @@
 				D170863B29C2EDEF00AC7E60 /* HomeViewController.swift in Sources */,
 				D170866B29C4CE0300AC7E60 /* RegisterViewViewModel.swift in Sources */,
 				D106E7AE299FF46E00F11079 /* TabbarViewController.swift in Sources */,
+				D14A3B7129FE9FBA00A33E47 /* MainDetailsView.swift in Sources */,
 				D170863F29C2EE0B00AC7E60 /* LostAndFoundViewController.swift in Sources */,
 				D106E7B4299FF46F00F11079 /* SDU_News.xcdatamodeld in Sources */,
 				D19F725029CEE015003FE71D /* TrendingCollectionViewCell.swift in Sources */,
 				D1BDA6EA29D1F61000CEB7CF /* ClubsCollectionViewCell.swift in Sources */,
 				D170863D29C2EDFE00AC7E60 /* NewsViewController.swift in Sources */,
 				D17086C629CDAF4900AC7E60 /* SettingsViewController.swift in Sources */,
+				D14068F129E72F5B00DC218A /* TrendingListCollectionViewCell.swift in Sources */,
 				D170866E29C4D67800AC7E60 /* AuthManager.swift in Sources */,
 				D14068EB29E0316500DC218A /* ClubDetailsViewController.swift in Sources */,
 				D106E7AA299FF46E00F11079 /* AppDelegate.swift in Sources */,
@@ -616,6 +627,7 @@
 				D170864429C2F3A300AC7E60 /* PopUpViewController.swift in Sources */,
 				D14068ED29E6B94100DC218A /* ClubNewsTableViewCell.swift in Sources */,
 				D170864629C2F41F00AC7E60 /* SignInViewController.swift in Sources */,
+				D14068EF29E72D1800DC218A /* TrendingListViewController.swift in Sources */,
 				D106E7AC299FF46E00F11079 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,11 +44,15 @@ class ClubsCollectionViewCell: UICollectionViewCell {
       
     }
     
-    func setImage(imageNames: String) {
-       clubsLogo.image = UIImage(named: imageNames)
+    func setImage(imageUrl: String?) {
+        if let imageUrl = imageUrl, let url = URL(string: "http://185.125.88.33/images/\(imageUrl)") {
+            clubsLogo.load(url: url)
+        } else {
+            clubsLogo.image = UIImage(named: "shapagatclublogo")
+        }
    }
    
-    func setClubName(labelText: String) {
+    func setClubName(labelText: String?) {
        clubName.text = labelText
    }
     
@@ -75,3 +79,16 @@ class ClubsCollectionViewCell: UICollectionViewCell {
 
 
 
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}

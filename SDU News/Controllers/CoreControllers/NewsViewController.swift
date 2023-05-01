@@ -153,7 +153,7 @@ class NewsViewController: UIViewController {
             sectionStack.snp.makeConstraints {
                 $0.left.equalToSuperview().inset(20)
                 $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
-                $0.right.equalToSuperview()
+                $0.right.equalToSuperview().inset(20)
                 
                 
             }
@@ -198,3 +198,5 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         114
     }
 }
+
+
