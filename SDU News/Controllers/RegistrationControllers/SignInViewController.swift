@@ -52,7 +52,6 @@ private func presentAlert(with error: String) {
     
     @objc private func loginButtonTapped() {
         viewModel.loginUser()
-      
     }
    
     
@@ -93,8 +92,8 @@ private func presentAlert(with error: String) {
         
         viewModel.$user.sink {[weak self] user in
             guard user != nil else {return}
-            guard let vc = self?.navigationController?.viewControllers.first as? PopUpViewController else {return}
-            vc.dismiss(animated: true)
+//            guard let vc = self?.navigationController?.viewControllers.first as? PopUpViewController else {return}
+         //   vc.dismiss(animated: true)
         }
         .store(in: &subscriptions)
         

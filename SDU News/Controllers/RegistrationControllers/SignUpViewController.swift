@@ -47,6 +47,7 @@ class SignUpViewController: UIViewController {
     @objc private  func registeredOnTap() {
         viewModel.createUser()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -310,6 +311,7 @@ class SignUpViewController: UIViewController {
    
 
 }
+
 
 
 

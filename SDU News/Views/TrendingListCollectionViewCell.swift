@@ -45,6 +45,8 @@ class TrendingListCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "trendingnews")
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
         return imageView
     }()
     
@@ -70,6 +72,21 @@ class TrendingListCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configureCell(model: Articles) {
+        sourceLabel.text = model.title
+        newsTitle.text = model.description
+        setImage(imageUrl: model.image_path)
+    }
+    
+    func setImage(imageUrl: String?) {
+        if let imageUrl = imageUrl, let url = URL(string: "http://185.125.88.33/images/\(imageUrl)") {
+            imageView.load(url: url)
+        } else {
+            imageView.image = UIImage(named: "trendingnews")
+        }
+   }
+    
     
     private func configureConstraints() {
         imageView.snp.makeConstraints {
