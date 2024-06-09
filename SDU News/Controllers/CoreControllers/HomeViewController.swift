@@ -278,7 +278,7 @@ class HomeViewController: UIViewController {
     
     @objc private func signOutTapped() {
         try? Auth.auth().signOut()
-        authenticationHandler()
+       // authenticationHandler()
     }
     
     private func configureStackButtons() {
@@ -319,7 +319,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        authenticationHandler()
+      //  authenticationHandler()
     }
     
     
@@ -589,3 +589,9 @@ struct Articles: Decodable {
     var description: String?
     var image_path: String?
 }
+
+
+
+
+
+

@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class TrendingListViewController: UIViewController {
 
-    var images = ["trendingnews"]
+//    private var newsArray: [Articles] = []
+//    private var clubsArray: [Categories] = []
+//
+//
+   private var images: [Articles] = []
     var titles = ["Meeting with rector today"]
     
     override func viewDidLoad() {
@@ -20,6 +25,7 @@ class TrendingListViewController: UIViewController {
         collectionViewSetup.register(TrendingListCollectionViewCell.self, forCellWithReuseIdentifier: "cellTrendingList")
         collectionViewSetup.delegate = self
         collectionViewSetup.dataSource = self
+      //  getArticles()
         // Do any additional setup after loading the view.
     }
     
@@ -66,7 +72,7 @@ class TrendingListViewController: UIViewController {
 extension TrendingListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-            return 4
+        return images.count
         
         
         
@@ -75,18 +81,66 @@ extension TrendingListViewController: UICollectionViewDelegate, UICollectionView
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(MainDetailsView(), animated: true)
+        let vc = MainDetailsView()
+        vc.configureCell(model: images[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TrendingCollectionViewCell
+//        cell.configureCell(model: newsArray[indexPath.row])
       
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellTrendingList", for: indexPath) as! TrendingListCollectionViewCell
-        cell.setLabelName(labelText: "Meeting with rector today")
-        cell.setImage(imageNames: "trendingnews")
+        cell.configureCell(model: images[indexPath.row])
             return cell
         
        
     }
 }
+
+
+extension TrendingListViewController {
+//    func getCategories() {
+//        AF.request("http://185.125.88.33/categories/")
+//            .validate()
+//            .responseDecodable(of: [Categories].self) { (response) in
+//                switch response.result {
+//                case .success(let model):
+//                    print(model)
+//                    let categories = model.filter { category in
+//                        category.parent_id == 2
+//                    }
+//                    self.images = categories
+//                    DispatchQueue.main.async {
+//                        self.collectionViewSetup.reloadData()
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
+    
+    func getArticles() {
+//        AF.request("http://185.125.88.33/articles/")
+//            .validate()
+//            .responseDecodable(of: [Articles].self) { (response) in
+//                switch response.result {
+//                case .success(let model):
+//                    print(model)
+//                    self.images = model
+//                    DispatchQueue.main.async {
+//                        self.collectionViewSetup.reloadData()
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+    }
+}
+
+
+
+
+
+
 

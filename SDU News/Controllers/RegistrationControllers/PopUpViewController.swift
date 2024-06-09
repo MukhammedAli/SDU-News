@@ -69,7 +69,7 @@ class PopUpViewController: UIViewController {
     
     @objc private func didTapCreateAccount
     () {
-        let vc = SignUpViewController()
+        let vc = TabbarViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
